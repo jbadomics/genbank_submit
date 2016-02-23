@@ -1,0 +1,6 @@
+StructuredCommentPrefix	##Genome-Assembly-Data-START##
+Assembly Method	HGAP v.3 v. 2015-09-01
+Assembly Name	Salbus_SM254.1
+Long Assembly Name	Streptomyces albus SM254 1.0
+Genome Coverage	250x
+Sequencing Technology	PacBio; Illumina MiSeq
