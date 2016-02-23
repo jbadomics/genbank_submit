@@ -48,7 +48,7 @@ I like to keep the GenBank file open in a plain text editor (I use [TextWrangler
 
 ## One last thing
 
-If you prefer not to deal with the frustration of NCBI sending you a rapid-response "your genome cannot be accepted because {insert esoteric excuse here}", upload your shiny, ready-to-submit genome in `.sqn` format to NCBI's online [Microbial Genome Submission Check Tool](http://www.ncbi.nlm.nih.gov/genomes/frameshifts/frameshifts.cgi). Be patient; it can take several hours depending on the job queue. Inspect the report for errors and be prepared to justify any errors you cannot or did not fix. Otherwise, go back to the GenBank file and/or Artemis to manually inspect any flagged frameshifts, long overlaps, or RNA overlaps. If you make changes, simply re-run the command above and check the error reports to see if the problems were fixed.
+If you prefer not to deal with the frustration of NCBI sending you a rapid-response "your genome cannot be accepted because {insert esoteric excuse here}", upload your shiny, ready-to-submit genome in `.sqn` format to NCBI's online [Microbial Genome Submission Check Tool](http://www.ncbi.nlm.nih.gov/genomes/frameshifts/frameshifts.cgi). **NCBI will run this anyway, so if there are errors to fix it's better to know in advance.** Be patient; it can take several hours depending on the job queue. Inspect the report for errors and be prepared to justify any errors you cannot or did not fix. Otherwise, go back to the GenBank file and/or Artemis to manually inspect any flagged frameshifts, long overlaps, or RNA overlaps. If you make changes, simply re-run the command above and check the error reports to see if the problems were fixed.
 
 ## Submit your genome
 
