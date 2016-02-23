@@ -34,7 +34,7 @@ DiscRep_SUB:OVERLAPPING_CDS::60 coding regions overlap another coding region wit
 
 *   `-t` gives the file path to the [submission template](https://submit.ncbi.nlm.nih.gov/genbank/template/submission/) (REQUIRED)
 
-*   `-Y` gives the file path to a `.cmt` file containing structured comments regarding the genome assembly. An example `cmt` file is included in this repo and can be generated [here](https://submit.ncbi.nlm.nih.gov/structcomment/genomes/).
+*   `-Y` gives the file path to a `.cmt` file containing structured comments regarding the genome assembly. An example `.cmt` file is included in this repo and can be generated [here](https://submit.ncbi.nlm.nih.gov/structcomment/genomes/).
 
 When `tbl2asn` completes, check ALL of the following files for errors and correct them:
 
@@ -42,7 +42,7 @@ When `tbl2asn` completes, check ALL of the following files for errors and correc
     genome.val # where genome is the name of your curated GenBank file
     discrep
 
-I like to keep the GenBank file open in a plain text editor (I use [TextWrangler](http://www.barebones.com/products/textwrangler/)) as well as in [Artemis](http://www.sanger.ac.uk/science/tools/artemis) for viewing. **Whenever you make changes to the GenBank file, re-open it in Artemis to make sure it can still pe parsed properly.**
+I like to keep the GenBank file open in a plain text editor (I use [TextWrangler](http://www.barebones.com/products/textwrangler/)) as well as in [Artemis](http://www.sanger.ac.uk/science/tools/artemis) for viewing. **Whenever you make changes to the GenBank file, re-open it in Artemis to make sure it can still be parsed properly.**
 
 ## One last thing
 
