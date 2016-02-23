@@ -18,9 +18,9 @@ warnings.simplefilter('ignore', BiopythonWarning)
 
 # script help and usage
 parser=argparse.ArgumentParser(
-    description='extracts amino acid sequences of hypothetical proteins FASTA format from a (multi)-Genbank file.',
+    description='extracts amino acid sequences of hypothetical proteins FASTA format from a (multi)-Genbank file\n\nRequires BioPython v. 1.65 or later (http://biopython.org/wiki/Download)',
     epilog='Author: Jon Badalamenti, Bond Lab, University of Minnesota (http://www.thebondlab.org)\nhttp://github.com/jbadomics/tnseq\nFebruary 2016\n \n', formatter_class=RawTextHelpFormatter)
-parser.add_argument('[GENBANK FILE]', help='Genbank file from which to extract genome sequence')
+parser.add_argument('[GENBANK FILE]', help='Genbank file from which to extract hypothetical protein sequences')
 args=parser.parse_args()
 
 outputFileName = sys.argv[1].replace(".gbk", ".hypotheticals.faa")
@@ -30,7 +30,7 @@ with open(outputFileName, 'wb') as outputFile:
 		for sequenceRecord in SeqIO.parse(genbankFile, "genbank"):
 			for feature in sequenceRecord.features:
 				if feature.type == 'CDS':
-					if 'ypothetical' in ''.join(feature.qualifiers["product"]):
+					if 'hypothetical' in ''.join(feature.qualifiers["product"]).lower:
 						locusTag = ''.join(feature.qualifiers["locus_tag"])
 						aaSeq = ''.join(feature.qualifiers["translation"])
 						outputString = '>%s\n%s' % (locusTag, aaSeq)
