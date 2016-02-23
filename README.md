@@ -11,7 +11,7 @@ Before submission, you must first convert the curated GenBank file into `.tbl` f
 
 Then, run [tbl2asn](http://www.ncbi.nlm.nih.gov/genbank/tbl2asn2/) to convert the `.tbl` file to `.sqn` for submission
 
-    gbf2tbl.pl genome.gbk && tbl2asn -a s -V v -c b -Z discrep -i genome.fsa -f genome.tbl -t genome.sbt -Y genome.cmt
+    gbf2tbl.pl genome.gbk && tbl2asn -a s -V v -c b -Z discrep -i genome.fsa -f genome.tbl -t genome.sbt -X C
 
 **Explanation of command line arguments**
 
@@ -34,7 +34,7 @@ DiscRep_SUB:OVERLAPPING_CDS::60 coding regions overlap another coding region wit
 
 *   `-t` gives the file path to the [submission template](https://submit.ncbi.nlm.nih.gov/genbank/template/submission/) (REQUIRED)
 
-*   `-Y` gives the file path to a `.cmt` file containing structured comments regarding the genome assembly. An example `.cmt` file is included in this repo and can be generated [here](https://submit.ncbi.nlm.nih.gov/structcomment/genomes/).
+*   `-X C` tells `tbl2asn` to include genome assembly structured comments from a `.cmt` file. If you don't include this, NCBI can still accept your genome, but will ask you for these details after the fact. An example `.cmt` file is included in this repo and can be generated [here](https://submit.ncbi.nlm.nih.gov/structcomment/genomes/). **NOTE:** The `.cmt` file MUST have the same prefix as your original GenBank file. The `-X C` argument does not specify a path to the `.cmt` file; rather, it looks for it in the current directory and assumes it has the same prefix as all other files.
 
 When `tbl2asn` completes, check ALL of the following files for errors and correct them:
 
@@ -50,4 +50,6 @@ If you prefer not to deal with the frustration of NCBI sending you a rapid-respo
 
 ## Submit your genome
 
-After all that work, the actual submission is rather anti-climactic. Go to [GenomesMacroSend](http://www.ncbi.nlm.nih.gov/projects/GenomeSubmit/genome_submit.cgi) and upload your `.sqn` file. Enter any comments, such as justifications for not fixing any known errors. Adding detailed comments will improve the chances, but not necessarily guarantee, that NCBI will not just kick the submission right back to you under the assumption that you are like most NCBI submitters and have probably screwed up something you didn't even know could be screwed up. In fact, the reason I wrote this README is because NCBI's instructions, if they exist, are either 1) far from clear 2) scattered across a dozen pages that may not have been updated since 2001 or 3) both. Don't believe me? Ignore what I told you about the `-f` flag for `tbl2asn` and try to find out what it does. Hint: `tbl2asn --help` doesn't really clear things up, and the online [documentation](http://www.ncbi.nlm.nih.gov/genbank/tbl2asn2/) doesn't even list a `-f` option.
+After all that work, the actual submission is rather anti-climactic. Go to [GenomesMacroSend](http://www.ncbi.nlm.nih.gov/projects/GenomeSubmit/genome_submit.cgi) and upload your `.sqn` file. Enter any comments, such as justifications for not fixing any known errors. You should also include a note saying when you want your genome to be publicly released (either immediately upon acceptance, or on a specific date†). Adding detailed comments will improve the chances, but not necessarily guarantee, that NCBI will not just kick the submission right back to you under the assumption that you are like most NCBI submitters and have probably screwed up something you didn't even know could be screwed up. In fact, the reason I wrote this README is because NCBI's instructions, if they exist, are either 1) far from clear 2) scattered across a dozen pages that may not have been updated since 2001 or 3) both. Don't believe me? Ignore what I told you about the `-f` flag for `tbl2asn` and try to find out what it does. Hint: `tbl2asn --help` doesn't really clear things up, and the online [documentation](http://www.ncbi.nlm.nih.gov/genbank/tbl2asn2/) doesn't even list a `-f` option.
+
+†The genome must be publicly accessible *before* submitting to a journal, and it can take several business days after you request public release for your genome to appear in NCBI searches.
