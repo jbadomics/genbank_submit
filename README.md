@@ -34,7 +34,7 @@ DiscRep_SUB:OVERLAPPING_CDS::60 coding regions overlap another coding region wit
 
 *   `-t` gives the file path to the [submission template](https://submit.ncbi.nlm.nih.gov/genbank/template/submission/) (REQUIRED)
 
-*   `-X C` tells `tbl2asn` to include genome assembly structured comments from a `.cmt` file. If you don't include this, NCBI can still accept your genome, but will ask you for these details after the fact. An example `.cmt` file is included in this repo and can be generated [here](https://submit.ncbi.nlm.nih.gov/structcomment/genomes/). **NOTE:** The `.cmt` file MUST have the same prefix as your original GenBank file. The `-X C` argument does not specify a path to the `.cmt` file; rather, it looks for it in the current directory and assumes it has the same prefix as all other files.
+*   `-X C` tells `tbl2asn` to include genome assembly structured comments from a `.cmt` file. If you don't include this, NCBI can still accept your genome, but will ask you for these details after the fact. An example `.cmt` file is included in this repo and can be generated [here](https://submit.ncbi.nlm.nih.gov/structcomment/genomes/). **NOTE:** The `.cmt` file MUST have the same prefix as your original GenBank file. The `-X C` argument does not specify a path to the `.cmt` file; rather, it looks for it in the current directory and assumes it has the same prefix as all other files. At the end of the `discrep` report, disregard any problems associated with structured comments.
 
 When `tbl2asn` completes, check ALL of the following files for errors and correct them:
 
