@@ -53,3 +53,25 @@ If you prefer not to deal with the frustration of NCBI sending you a rapid-respo
 After all that work, the actual submission is rather anti-climactic. Go to [GenomesMacroSend](http://www.ncbi.nlm.nih.gov/projects/GenomeSubmit/genome_submit.cgi) and upload your `.sqn` file. Enter any comments, such as justifications for not fixing any known errors. You should also include a note saying when you want your genome to be publicly released (either immediately upon acceptance, or on a specific date†). Adding detailed comments will improve the chances, but not necessarily guarantee, that NCBI will not just kick the submission right back to you under the assumption that you are like most NCBI submitters and have probably screwed up something you didn't even know could be screwed up. In fact, the reason I wrote this README is because NCBI's instructions, if they exist, are either 1) far from clear 2) scattered across a dozen pages that may not have been updated since 2001 or 3) both. Don't believe me? Ignore what I told you about the `-f` flag for `tbl2asn` and try to find out what it does. Hint: `tbl2asn --help` doesn't really clear things up, and the online [documentation](http://www.ncbi.nlm.nih.gov/genbank/tbl2asn2/) doesn't even list a `-f` option.
 
 †The genome must be publicly accessible *before* submitting to a journal, and it can take several business days after you request public release for your genome to appear in NCBI searches.
+
+With any luck, you should get an email in 2-3 business days saying something like this:
+
+~~~
+Dear GenBank Submitter:
+
+We have assigned the following accession number to your Streptomyces albus SM254
+genome:
+
+BioProject 	BioSample  	Localid    	Accession  	Organism     
+------------------------------------------------------------------------
+PRJNA295319	SAMN04053756	chr1      	CP014485  	Streptomyces albus SM254
+
+This is the number that should be used in any publications citing 
+the complete genome.
+
+This genome will be released in the next few days.  Please let us know
+as soon as possible if you do not want the genome released.
+
+Please reply using the original subject line.
+This will allow for faster processing of your correspondence.
+~~~
